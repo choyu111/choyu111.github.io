@@ -26,7 +26,6 @@
             background: #F5F0E8;
             color: #2A2520;
             display: flex;
-            position: relative;
         }
 
         /* Warm ambient blobs behind everything */
@@ -93,7 +92,7 @@
 
         /* ── Left: Info (horizontal stretch) ── */
         .info-panel {
-            width: 36%;
+            width: 46%;
             min-width: 340px;
             padding: 0 40px;
             padding-left: 8%;
@@ -226,7 +225,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding-left: 360px;
+            padding-left: 0;
             overflow: hidden;
         }
 
@@ -307,96 +306,6 @@
             transition: opacity 0.6s ease, filter 0.6s ease, transform 0.3s ease-out;
         }
 
-        /* ── Bulletin Board ── */
-        .bulletin-section {
-            position: absolute;
-            top: 6%;
-            left: 0;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0;
-            animation: fadeUp 0.8s ease 1.3s forwards;
-        }
-
-        .bulletin-board {
-            background: #EDE5D8;
-            border: 3px solid #C4B08C;
-            border-radius: 2px;
-            padding: 24px 22px 22px;
-            box-shadow:
-                0 6px 24px rgba(42, 37, 32, 0.1),
-                inset 0 0 30px rgba(42, 37, 32, 0.04);
-            width: 300px;
-            position: relative;
-        }
-
-        .bulletin-board::before {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            border: 1px dashed rgba(196, 176, 140, 0.4);
-            pointer-events: none;
-        }
-
-        .bulletin-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            color: #6B5E4E;
-            text-align: center;
-            margin-bottom: 14px;
-            font-weight: 500;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-
-        .project-card {
-            background: #fff;
-            padding: 6px 6px 28px;
-            box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.08);
-            transform: rotate(-1.5deg);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        box-shadow 0.4s ease;
-            position: relative;
-            width: 100%;
-        }
-
-        .project-card:hover {
-            transform: rotate(0deg) translateY(-4px);
-            box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.14);
-        }
-
-        /* Washi tape decoration */
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%) rotate(2deg);
-            width: 44px;
-            height: 15px;
-            background: rgba(210, 195, 170, 0.6);
-            border: 1px solid rgba(190, 175, 150, 0.2);
-            z-index: 1;
-        }
-
-        .project-card img {
-            width: 100%;
-            display: block;
-            border: 1px solid #e8e0d4;
-        }
-
-        .project-card .project-label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.65rem;
-            color: #8B7D6B;
-            text-align: center;
-            margin-top: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
         /* ── Mobile ── */
         @media (max-width: 768px) {
             html, body { overflow-y: auto; overflow-x: hidden; }
@@ -413,7 +322,6 @@
             .art-panel {
                 min-height: 50vh;
                 order: -1;
-                padding-left: 0;
             }
 
             .figure-bg {
@@ -432,8 +340,6 @@
                 bottom: 10px;
                 right: 10px;
             }
-
-            .bulletin-section { display: none; }
         }
 
         @media (max-width: 480px) {
@@ -501,18 +407,6 @@
 
     <!-- Art Panel -->
     <section class="art-panel" id="artPanel">
-
-        <!-- Bulletin Board -->
-        <section class="bulletin-section" id="bulletinSection">
-            <div class="bulletin-board">
-                <h2 class="bulletin-title">Pixels</h2>
-                <div class="project-card">
-                    <img src="resources/space_trash_collecting.jpg" alt="Space Trash Collecting">
-                    <p class="project-label">Space Trash Collecting</p>
-                </div>
-            </div>
-        </section>
-
         <img
             src="resources/self_portrait_figure.svg"
             alt="Self Portrait"
